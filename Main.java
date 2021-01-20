@@ -1,13 +1,21 @@
-package exerciseFivePointOneSix;
+package exerciseFivePointOneTwo;
 
-import java.util.Scanner;
+import javax.swing.*;
+import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-//
-//        BarChart.setNumber(5);
-        BarChart.getNumber();
-//       BarChart.displayStars('*');
+        OddNumbersProduct oddNumbersProduct = new OddNumbersProduct();
+        int product = 1;
 
+
+        for (int i = 1; i <= 15; i += 1) {
+            if (i % 2 != 0) {
+                product = product * i ;
+            }
+
+        }
+
+        System.out.printf("product is %d%n", product);
     }
 }
