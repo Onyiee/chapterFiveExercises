@@ -1,21 +1,22 @@
-package exerciseFivePointOneTwo;
+package exerciseFivePointOneSeven;
 
-import javax.swing.*;
-import java.math.BigDecimal;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        OddNumbersProduct oddNumbersProduct = new OddNumbersProduct();
-        int product = 1;
+        Scanner input = new Scanner(System.in);
+        SalesCalculator salesCalculator = new SalesCalculator();
+        int productNumber;
 
-
-        for (int i = 1; i <= 15; i += 1) {
-            if (i % 2 != 0) {
-                product = product * i ;
-            }
+        System.out.println("enter product number or -1 to terminate: ");
+        productNumber = input.nextInt();
+        while (productNumber != -1) {
+            salesCalculator.setProductNumber(productNumber);
+            System.out.println("enter product number or -1 to terminate: ");
+            productNumber = input.nextInt();
 
         }
-
-        System.out.printf("product is %d%n", product);
+        double totalPrice = salesCalculator.getPrice();
+        System.out.printf("Total value of all products sold is %.2f%n",totalPrice);
     }
 }
